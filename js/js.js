@@ -31,7 +31,7 @@ $(function(){
      	},
      	onLeave:function(index, nextIndex, direction){
      		if(index==2){
-     			$(".list").hide();
+     			$(".list").hide({duration:1500,easing:'easeInOutExpo'});
      		}
      		if(index==3){
      			$(".skill img").hide();
@@ -71,10 +71,34 @@ $(function(){
 })	
 	function showdrop(index){
 	$(".drop").eq(index).slideToggle({duration:1000,easing:'easeOutElastic'});
-}
+    }
 })//技能点击显示结束
 //轮播
 $(function(){
-	
-})
+    var ind=0;
+    var len=$("#list a").length;
+    var timer=null;
+	$("#list a").mouseover(function(){
+        ind=$("#list a").index(this);
+        showpic(ind);
+    }).eq(0).mouseover();
+    $(".lunbo").hover(function(){
+        if(timer){
+        clearInterval(timer);
+        }
+    },function(){
+            timer=setInterval(function(){
+                showpic(ind);
+                ind++;
+                if(ind==len){
+                    ind=0;
+                }
+            },3000);
+        }).trigger('mouseleave')
+    });
+    function showpic(index2){
+        $("#lunbopic").find("img").eq(index2).stop(true,true).show(1000)
+                    .siblings().fadeOut();
+    };
+
 //轮播结束
