@@ -3,7 +3,7 @@ $(function(){
     $('#fullpage').fullpage({
         'verticalCentered': false,
         'css3': true,
-        'sectionsColor': ['#fff', '#fff', '#fff', '#fff','#fff'],
+        'sectionsColor': ['#1dd2af', '#f26964', '#ffd464', '#a4d1ee','#ababab'],
         anchors: ['page1', 'page2', 'page3', 'page4','page5'],
         'navigation': true,
         'navigationPosition': 'right',
@@ -12,6 +12,8 @@ $(function(){
      	afterLoad:function(anchorLink,index){
      		if(index==1){
      			$(".topnav li").eq(0).addClass("active").siblings().removeClass("active");
+                $(".photo").toggle({effect:"drop",direction:"up"})
+                $(".introduce").toggle({effect:"drop",direction:"up"})
      		}
      		if(index==2){
      			$(".topnav li").eq(1).addClass("active").siblings().removeClass("active");
@@ -30,6 +32,10 @@ $(function(){
      		}
      	},
      	onLeave:function(index, nextIndex, direction){
+            if(index==1){
+                $(".photo").toggle({effect:"drop",direction:"up"})
+                $(".introduce").toggle({effect:"drop",direction:"up"})
+            }
      		if(index==2){
      			$(".list").hide({duration:1500,easing:'easeInOutExpo'});
      		}
@@ -102,3 +108,10 @@ $(function(){
     };
 
 //轮播结束
+//github跳动
+$(function(){
+    $(".github").hover(function(){
+        $(this).toggle({effect:"shake",direction:"up",distance:3,times:3})
+    })
+})
+//github跳动

@@ -1,11 +1,11 @@
+*{
+	color: #fff;
+}
 .topnav{
 	margin-right: 200px;
 }
 .navbar-header{
 	margin-left:200px;
-}
-.section{
-	background-image: url("../img/background.jpg");
 }
 .page1{
 	padding-top: 200px;
@@ -17,16 +17,18 @@
 	background-image: url("../img/photo.jpg");
 	background-size: cover;
 	margin: 0 auto;
+	display: none;
 }
 .introduce{
 	width: 300px;
 	height: 200px;
 	margin: 50px auto;
+	display: none;
 }
 .introduce span{
 	display: block;
 	width: 300px;
-	font-size: 20px;
+	font-size: 25px;
 	text-align: center;
 	line-height: 20px;
 }
@@ -51,12 +53,16 @@
 	margin: 0 auto;
 	display: block;
 	width: 64px;
+	transition:transform 1s;
 }
 .list p{
 	font-size: 25px;
 	line-height: 25px;
 	text-align: center;
 	margin-top: 20px;
+}
+.list img:hover{
+	transform: rotate(360deg);
 }
 .page3 .page4{
 	padding-top: 150px;
@@ -110,15 +116,16 @@
 	display: inline-block;
 	float: left;
 	height: 32px;
-	width: 331px;
-	margin-right: 2px;
-	background-color: #444444;
+	width: 333px;
+	background-color:transparent;
 	text-align: center;
 	font-size: 20px;
 	text-decoration: none;
 }
+#list:last-child{
+	border-right: 1px solid transparent;
+}
 .github{
-	margin: 100px;
 	width: 136px;
 	font-size: 30px;
 	margin-left: auto;
@@ -138,9 +145,42 @@
 }
 .page5 p{
 	margin-top: 50px;
-	width: 600px;
+	width: 700px;
 	font-size: 25px;
 	margin-left: auto;
 	margin-right: auto;
 
+}
+.contactme{
+	margin-top: 100px;
+	width: 700px;
+	height: 300px;
+	overflow: hidden;
+}
+.contactme input{
+	margin-right: 20px;
+	width: 200px;
+	height: 40px;
+	font-size: 20px;
+	background-color: transparent;
+	color: #fff;
+	border:1px #fff solid;
+	outline:none
+}
+.contactme textarea{
+	margin-top: 25px;
+	width: 650px;
+	height: 100px;
+	font-size: 20px;
+	background-color: transparent;
+	color: #fff;
+	border:1px #fff solid;
+	outline:none
+}
+#btn{
+	margin-top: 50px;
+	transition: background-color 1s;
+}
+#btn:hover{
+	background-color: #1dd2af;
 }
